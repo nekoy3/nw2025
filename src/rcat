@@ -1,0 +1,18 @@
+#! /usr/local/bin/ruby
+#
+#もしくは最近では以下のが多いらしい
+#/usr/bin/env ruby
+#複数バージョンがある時とかに絶対パス使えない のでenvつかう
+#シェバン＋実行権限を与えておくとrubyとして認識する
+#Windows 拡張子(extention) / Unix系 接尾子(suffix)
+
+#シェバンをつけることでインタプリタを指定 rubyコマンドが不要に（権限が必要）
+#cp rcat /usr/local/bundle/bin
+
+ARGV.each do |arg|
+  File.open(arg, "r") do |f|
+    while line = f.gets&.chomp
+      puts line
+    end
+  end
+end

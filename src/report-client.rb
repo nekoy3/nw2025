@@ -11,9 +11,9 @@ request_data = {
 }
 
 # 認証開始
-json_string = request_data.to_json
+json_string = request_data.to_json #辞書型をjson文字列に変換する
 begin
-  s = TCPSocket.new("localhost", 55555)
+  s = TCPSocket.new("localhost", 55555) #サーバと通信するためにソケットオブジェクトを作成
 rescue => e
   print "error: "
   puts e
